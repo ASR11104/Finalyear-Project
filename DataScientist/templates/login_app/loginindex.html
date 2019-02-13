@@ -1,0 +1,35 @@
+{% extends "login_app/base.html" %}
+
+
+{% block body_block %}
+
+<div class="container">
+  <!-- <div class="jumbotron">
+    <h1>Welcome to the Home Page</h1>
+    {{ injectme }}
+    {% if user.is_authenticated %}
+
+        <h1>Your Dashboard</h1>
+        
+    {% else %}
+        <h2>Welcome to the site!</h2>
+    {% endif %}
+  </div> -->
+  {% if user.is_authenticated %}
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn btn btn-danger" onclick="closeNav()">&times;X</a>
+    <a href="#">Service 1</a>
+    <a href="#">Service 2</a>
+    <a href="#">Service 3</a>
+    <a href="#">Service 4</a>
+  </div>
+  
+  <!-- Use any element to open the sidenav -->
+  <span class="btn btn-primary" onclick="openNav()">&#9776;open</span>
+  
+  <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+  {% endif %}
+</div>
+
+{% endblock %}

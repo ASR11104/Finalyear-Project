@@ -1,0 +1,53 @@
+{% extends "login_app/base.html" %}
+{% block body_block %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'profilepage.css' %}">
+
+
+
+<div class="container">
+	<div class="row">
+        <div class="col-lg-4" ></div>
+        <div class="col-6" >
+		<div class="jumbotron col-lg-3 col-sm-6">
+            <div class="card hovercard">
+                <div class="cardheader">
+
+                </div>
+                <div class="avatar">
+                    <img alt="" src="{{ user.userprofileinfo.profile_pic.url }}" height="200px" width="200px" alt="profilepic">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <h3>{{ user.username }}</h3>
+                    </div>
+                    <div class="desc">
+                        <label for="first_name">First Name:</label>
+                        <input class="form-control" type="text" value="{{ user.first_name }}" readonly>
+
+                    </div>
+                    <div class="desc">
+                        <label for="last_name">Last Name:</label>
+                        <input class="form-control" type="text" value="{{ user.last_name }}" readonly>                    
+                    </div>
+                    <div class="desc">
+                        <label for="email">Email:</label>
+                        <input class="form-control" type="text" value="{{ user.email }}" readonly>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <a class="btn btn-primary btn-twitter btn-sm" href="#">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-lg-3" ></div>
+	</div>
+</div>
+
+{% endblock %}
