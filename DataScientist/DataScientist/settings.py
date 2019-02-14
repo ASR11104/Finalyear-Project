@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'login_app',
+    'datavisualisation_app',
     'bootstrap3',
 ]
 

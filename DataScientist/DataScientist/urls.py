@@ -26,11 +26,14 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     
     url(r'^$',views.IndexView.as_view(),name='index'),
-    url(r'^loginindex/',views.loginindex,name='loginindex'),
-    url(r'^special/',views.special,name='special'),
     url(r'^admin/', admin.site.urls),
+    url(r'^loginhome$', views.HomeView.as_view(), name='loginhome'),
+    url(r'^api/chart/data/$', views.ChartData.as_view(),name='charts'),
+    url(r'^special/',views.special,name='special'),    
     url(r'^login_app/',include('login_app.urls')),
     url(r'^logout/$', views.user_logout, name='logout'),
+
+    url(r'^datavisualisation_app/',include('datavisualisation_app.urls',namespace='datavisualisation_app')),
 ]
 
 

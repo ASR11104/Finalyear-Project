@@ -18,6 +18,7 @@
 
           {# Django Home Link / Admin Link / Register Link#}
           {% if user.is_authenticated %}
+          <li> <span class="btn  navbar-brand navbar-default" onclick="openNav()">&#9776;open</span></li>
           <li><a class="navbar-brand" href="{% url 'login_app:loginindex' %}">Home</a></li>
           {% else %}
           <li><a class="navbar-brand" href="{% url 'index' %}">Home</a></li>
@@ -31,6 +32,7 @@
           {# Logic for login and logout option #}
           {% if user.is_authenticated %}
            <li><a href="{% url 'login_app:profile' %}">profile</a></li>
+         
            <li><a href="{% url 'logout' %}">Logout</a></li>
           {% else %}
             <li><a class="navbar-link" href="{% url 'login_app:user_login' %}">Login</a></li>
